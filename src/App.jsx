@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import MovieList from './components/MovieList/MovieList';
 import Movie from './Pages/MovieDetails/Movie';
 import './App.css';
+import PageNotFound from "./Pages/Page 404/Page404";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
                 <Route index element={<Home />}></Route>
                 <Route path="movie/:id" element={<Movie />}></Route>
                 <Route path="movies/:type" element={<MovieList />}></Route>
-                <Route path="/*" element={<h1>Error Page</h1>}></Route>
+                <Route path="/*" element={<PageNotFound/>}></Route>
             </Routes>
         </Router>
     </div>
