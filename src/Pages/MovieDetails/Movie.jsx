@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./movie.css";
 import { useParams } from "react-router-dom";
+import "./movie.css";
 
 const Movie = () => {
   const [currentMovieDetails, setMovie] = useState();
