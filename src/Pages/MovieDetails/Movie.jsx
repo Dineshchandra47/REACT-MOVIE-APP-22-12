@@ -25,7 +25,7 @@ const Movie = () => {
         <img
           className="movie__backdrop"
           src={`https://image.tmdb.org/t/p/original${
-            currentMovieDetail ? currentMovieDetail.backdrop_path : ""
+            currentMovieDetails ? currentMovieDetails.backdrop_path : ""
           }`}
         />
       </div>
@@ -35,7 +35,7 @@ const Movie = () => {
             <img
               className="movie__poster"
               src={`https://image.tmdb.org/t/p/original${
-                currentMovieDetail ? currentMovieDetail.poster_path : ""
+                currentMovieDetails ? currentMovieDetails.poster_path : ""
               }`}
             />
           </div>
@@ -43,31 +43,31 @@ const Movie = () => {
         <div className="movie__detailRight">
           <div className="movie__detailRightTop">
             <div className="movie__name">
-              {currentMovieDetail ? currentMovieDetail.original_title : ""}
+              {currentMovieDetails ? currentMovieDetails.original_title : ""}
             </div>
             <div className="movie__tagline">
-              {currentMovieDetail ? currentMovieDetail.tagline : ""}
+              {currentMovieDetails ? currentMovieDetails.tagline : ""}
             </div>
             <div className="movie__rating">
-              {currentMovieDetail ? currentMovieDetail.vote_average : ""}{" "}
+              {currentMovieDetails ? currentMovieDetails.vote_average : ""}{" "}
               <i className = "fas fa-star" />
               <span className="movie__voteCount">
-                {currentMovieDetail
-                  ? "(" + currentMovieDetail.vote_count + ") votes"
+                {currentMovieDetails
+                  ? "(" + currentMovieDetails.vote_count + ") votes"
                   : ""}
               </span>
             </div>
             <div className="movie__runtime">
-              {currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}
+              {currentMovieDetails ? currentMovieDetails.runtime + " mins" : ""}
             </div>
             <div className="movie__releaseDate">
-              {currentMovieDetail
-                ? "Release date: " + currentMovieDetail.release_date
+              {currentMovieDetails
+                ? "Release date: " + currentMovieDetails.release_date
                 : ""}
             </div>
             <div className="movie__genres">
-              {currentMovieDetail && currentMovieDetail.genres
-                ? currentMovieDetail.genres.map((genre) => (
+              {currentMovieDetails && currentMovieDetails.genres
+                ? currentMovieDetails.genres.map((genre) => (
                     <>
                     {/* <div key={genre.id}></div> */}
                       <span className="movie__genre" key={genre.id}>
@@ -80,15 +80,15 @@ const Movie = () => {
           </div>
           <div className="movie__detailRightBottom">
             <div className="synopsisText">Synopsis</div>
-            <div>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
+            <div>{currentMovieDetails ? currentMovieDetails.overview : ""}</div>
           </div>
         </div>
       </div>
       <div className="movie__links">
         <div className="movie__heading">Useful Links</div>
-        {currentMovieDetail && currentMovieDetail.homepage && (
+        {currentMovieDetails && currentMovieDetails.homepage && (
           <a
-            href={currentMovieDetail.homepage}
+            href={currentMovieDetails.homepage}
             target="_blank"
             style={{ textDecoration: "none" }}
           >
@@ -99,9 +99,9 @@ const Movie = () => {
             </p>
           </a>
         )}
-        {currentMovieDetail && currentMovieDetail.imdb_id && (
+        {currentMovieDetails && currentMovieDetails.imdb_id && (
           <a
-            href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id}
+            href={"https://www.imdb.com/title/" + currentMovieDetails.imdb_id}
             target="_blank"
             style={{ textDecoration: "none" }}
           >
@@ -115,9 +115,9 @@ const Movie = () => {
       </div>
       <div className="movie__heading">Production companies</div>
       <div className="movie__production">
-        {currentMovieDetail &&
-          currentMovieDetail.production_companies &&
-          currentMovieDetail.production_companies.map((company) => (
+        {currentMovieDetails &&
+          currentMovieDetails.production_companies &&
+          currentMovieDetails.production_companies.map((company) => (
             <>
             <div key={company.id}></div>
               {company.logo_path && (

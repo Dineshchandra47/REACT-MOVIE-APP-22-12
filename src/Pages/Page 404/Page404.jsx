@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PageNotFound = () => {
   return (
     <div id="wrapper">
-      <img src="https://i.imgur.com/A040Lxr.png" />
-      <div id="info">
-        <h3>This page could not be found</h3>
-      </div>
+      <h1 id="page404" style={{ color: "#ffff", textAlign: "center" }}>
+        <b>Page Not Found</b>
+        <Link style={{ color: "skyblue", textAlign: "center", textDecoration:"none"}} to="/">Go to Home </Link>
+      </h1>
     </div>
   );
 };
